@@ -1,7 +1,109 @@
 <!DOCTYPE html>
-<html>
-  <h1>LET'S DO SOMETHING CRAZY</h1>
-  <P>I AM MANISH SUTHAR DEVLOPER OF THIS WEBPAGE TRULY BASED ON MY INTREST</P>
-  <pre>YT Video <a href="https://youtu.be/cLg3D_-Vbls"><b>Click Here</b></a></pre>
-  <img src="/image1.png" height="100" width="100">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Yatharth 🎉</title>
+
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 1.8em; }
+p  { font-size: 18px; }
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #2a5298;
+    cursor: pointer;
+}
+
+/* Fullscreen video */
+#videoPlayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    display: none;
+    z-index: 999;
+    background: black;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainContent">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <h2>Yatharth (Munio) Suthar 💙</h2>
+    <p>Turning 3 on 10th April 🎂</p>
+    <p>Click below for a special surprise 👇</p>
+
+    <button onclick="showSurprise()">🎁 Click Here for Surprise</button>
+
+    <p style="margin-top:30px; opacity:0.8;">Made with ❤️ by your Mamlo</p>
+</div>
+
+<!-- Cloudinary Fullscreen Video -->
+<iframe id="videoPlayer"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+</iframe>
+
+<script>
+function showSurprise() {
+
+    // Hide main content
+    document.getElementById("mainContent").style.display = "none";
+
+    // Show video
+    let video = document.getElementById("videoPlayer");
+    video.style.display = "block";
+
+    // Load Cloudinary video with autoplay
+    video.src = "https://player.cloudinary.com/embed/?cloud_name=dygosjdtx&public_id=InShot_20260409_201754471_ubmrmx&autoplay=true&muted=false";
+
+    // Confetti 🎊
+    confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
+
+    // Continuous confetti
+    setInterval(() => {
+        confetti({
+            particleCount: 40,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }, 2000);
+}
+</script>
+
+</body>
 </html>
